@@ -129,6 +129,41 @@
           }
         }
       }
+    },
+    "ngNinePatch": {
+      "root": "projects/ng-nine-patch",
+      "sourceRoot": "projects/ng-nine-patch/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ng-nine-patch/tsconfig.lib.json",
+            "project": "projects/ng-nine-patch/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-nine-patch/src/test.ts",
+            "tsConfig": "projects/ng-nine-patch/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-nine-patch/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-nine-patch/tsconfig.lib.json",
+              "projects/ng-nine-patch/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "nine-patch"

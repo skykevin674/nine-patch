@@ -1,27 +1,34 @@
-# NinePatch
+<h1 align="center">ngNinePatch</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
+An angular control of <a href="https://developer.android.com/studio/write/draw9patch">Nine Patch</a>
 
-## Development server
+## Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+Add needed package to NgModule imports:
+```
+import { NgNinePatchModule } from 'ng-nine-patch';
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+@NgModule({
+  ...
+  imports: [NgNinePatchModule,...]
+  ...
+})
+```
 
-## Build
+Add component to your page:
+```
+<div libNinePatch src="assets/border.9.png"></div>
+```
+## Options
+`ninePatch` directive support following input porperties:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+| Input | Type | Default | Description |
+|-------|------|---------|-------------|
+| `[src]` | string | null | .9 image path |
+| `[repeatMode]` | string | scale | the image repeat mode, use 'scale' or repeat |
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### License
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+MIT
